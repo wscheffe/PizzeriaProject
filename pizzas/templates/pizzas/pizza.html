@@ -12,7 +12,18 @@
         {% empty %}
         <li>No toppings have been added yet.</li>
         {% endfor %}
+
+        {}
+
+        {% for comment in comments %}
+        <p>Comment: {{ comment.text }}</p>
+        {% empty %}
+        <li> No comments have been made yet.</li>
+        {% endfor %}
     </ul>
     
+    <p>
+        <a href="{% url 'pizzas:new_comment' pizza.id %}">Add new comment</a>
+    </p>
 
 {% endblock content %}
